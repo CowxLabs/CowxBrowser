@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=CowxBrowser
+Comment=A barebones lightweight browser built with PyQt6 and Qt WebEngine
+Exec=cowxbrowser %U
+Icon=cowxbrowser
+Terminal=false
+Type=Application
+Categories=Network;WebBrowser;
+MimeType=text/html;text/xml;application/xhtml+xml;
+StartupNotify=true
+Keywords=browser;web;qt;
