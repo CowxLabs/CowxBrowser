@@ -1,12 +1,8 @@
 # -*- mode: python ; coding: utf-8 -*-
-import sys
-from pathlib import Path
-
-ROOT = Path(__file__).parent
 
 a = Analysis(
-    [str(ROOT / "run.py")],
-    pathex=[str(ROOT)],
+    ["run.py"],
+    pathex=["."],
     binaries=[],
     datas=[],
     hiddenimports=[
