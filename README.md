@@ -21,30 +21,21 @@ A barebones lightweight browser built with **PyQt6** and **Qt WebEngine**.
 
 ## Installation
 
-### Via pip
+### Quick start (Linux)
 
 ```bash
-pip install cowxbrowser
+curl -L https://github.com/CowxLabs/CowxBrowser/releases/download/v0.1.0-alpha/install.py | python3
+cowxbrowser
 ```
 
-### From source
+### All options
 
-```bash
-git clone https://github.com/your-username/cowxbrowser.git
-cd cowxbrowser
-python -m venv venv
-source venv/bin/activate   # or `venv\Scripts\activate` on Windows
-pip install -r requirements.txt
-python -m cowxbrowser.main
-```
+See the full **[Installation Guide](INSTALL.md)** for:
 
-### Standalone binary
-
-Download the latest release from the [releases page](https://github.com/your-username/cowxbrowser/releases).
-
-*Linux*: `cowxbrowser-x86_64.AppImage`
-*macOS*: `cowxbrowser.dmg`
-*Windows*: `cowxbrowser.exe`
+- Standalone binary (Linux, no Python needed)
+- From source (Linux / macOS / Windows)
+- Distribution archive
+- Updating, uninstalling, and troubleshooting
 
 ## Usage
 
@@ -95,14 +86,14 @@ No data is sent anywhere. Everything stays on your machine.
 - **No third-party services.** DuckDuckGo is the default search engine and is only contacted when you search.
 - **Ad blocking is opt-out.** Enabled by default, toggle off in the menu.
 
-## Building a Standalone Binary
+## Building from Source
 
 ```bash
-pip install pyinstaller
-pyinstaller cowxbrowser.spec
+git clone https://github.com/CowxLabs/CowxBrowser.git
+cd CowxBrowser
+make build     # builds standalone binary
+make run       # runs from source
 ```
-
-Output appears in `dist/`.
 
 ## Contributing
 
