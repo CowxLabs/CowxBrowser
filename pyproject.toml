@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=68.0"]
+build-backend = "setuptools.backends._legacy:_Backend"
+
+[project]
+name = "cowxbrowser"
+version = "0.1.0-alpha"
+description = "A barebones lightweight browser built with PyQt6 and Qt WebEngine"
+authors = [
+    {name = "CowxBrowser Contributors"},
+]
+license = {file = "LICENSE"}
+readme = "README.md"
+requires-python = ">=3.10"
+keywords = ["browser", "pyqt6", "qt6", "webengine"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: POSIX :: Linux",
+    "Operating System :: MacOS",
+    "Operating System :: Microsoft :: Windows",
+    "Topic :: Internet :: WWW/HTTP :: Browsers",
+]
+dependencies = [
+    "PyQt6>=6.5",
+    "PyQt6-WebEngine>=6.5",
+]
+
+[project.scripts]
+cowxbrowser = "cowxbrowser.main:main"
+
+[tool.setuptools.packages.find]
+include = ["cowxbrowser*"]

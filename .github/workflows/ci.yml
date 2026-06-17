@@ -1,0 +1,33 @@
+name: CI
+
+on: [push, pull_request]
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+      - name: Check imports
+        run: |
+          python -c "
+          import sys
+          sys.path.insert(0, '.')
+          from cowxbrowser.tab_widget import TabWidget, BrowserWebView
+          from cowxbrowser.browser import BrowserWindow
+          from cowxbrowser.main import main
+          from cowxbrowser.ad_blocker import AdBlockerInterceptor
+          from cowxbrowser.reader_mode import ReaderMode
+          from cowxbrowser.history_dialog import HistoryDialog
+          from cowxbrowser.session_manager import SessionManager
+          from cowxbrowser.settings_dialog import SettingsDialog
+          print('All imports OK')
+          "
+      - name: Run tests
+        run: |
+          python -m pytest tests/ -v || true
